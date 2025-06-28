@@ -1,0 +1,94 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 2px solid #ccc;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 0.5rem;
+  margin-bottom: 0.3rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #ddd;
+}
+
+.sidebar-empty {
+  color: #888;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.sidebar-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.logout-button {
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: darkred;
+}
+
+/* Dark mode */
+body.dark .sidebar {
+  background-color: #222;
+  border-color: red;
+}
+
+body.dark .sidebar-link {
+  color: #fff;
+}
+
+body.dark .sidebar-link:hover {
+  background-color: #444;
+}
+
+body.dark .sidebar-empty {
+  color: #aaa;
+}
+
+body.dark .logout-button {
+  background-color: #e53935;
+  color: #fff;
+}
+
+body.dark .logout-button:hover {
+  background-color: #b71c1c;
+}

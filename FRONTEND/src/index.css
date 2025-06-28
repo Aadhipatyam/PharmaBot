@@ -1,0 +1,393 @@
+:root {
+  --bg: #f0f2f5;
+  --text: #333;
+  --card-bg: #fff;
+  --card-border: #eaeaea;
+  --primary: #007bff;
+  --primary-hover: #0056b3;
+  --calendar-today: #007bff;
+}
+
+body.dark {
+  --bg: #181818;
+  --text: #f0f0f0;
+  --card-bg: #222;
+  --card-border: #444;
+  --primary: #1e90ff;
+  --primary-hover: #4682b4;
+  --calendar-today: #1e90ff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1, h2 {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+input, button {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dashboard-container {
+  display: flex;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  padding-left: 300px; /* leaves space for sidebar */
+}
+
+
+/* Toggle button */
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.theme-toggle button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.theme-toggle button:hover {
+  background: var(--primary-hover);
+}
+
+/* Calendar */
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.react-calendar {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+/* Light mode */
+.react-calendar__tile {
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Today highlight */
+.react-calendar__tile--now {
+  background: var(--calendar-today) !important;
+  color: #fff !important;
+  border-radius: 8px;
+}
+
+/* DARK MODE CUSTOMIZATION */
+body.dark .react-calendar {
+  background-color: #2a2a2a;
+  color: #ff4d4d;
+}
+
+/* Highlight selected date in dark mode */
+body.dark .react-calendar__tile--active {
+  background-color: #ff9999 !important;
+  color: #2a2a2a !important;
+  border-radius: 8px;
+}
+
+body.dark .react-calendar__tile {
+  background-color: #2a2a2a;
+  color: #ff4d4d;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+body.dark .react-calendar__tile:hover {
+  background-color: #3b3b3b;
+}
+
+body.dark .react-calendar__tile--now {
+  background: #ff4d4d !important;
+  color: #fff !important;
+}
+
+.react-calendar__tile {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.react-calendar__tile--now {
+  background: var(--calendar-today) !important;
+  color: #fff !important;
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Tables */
+.task-table {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.task-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th, .task-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.task-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+body.dark .task-table th {
+  background-color: #333;
+}
+
+.task-lists {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.task-lists > div {
+  flex: 1;
+}
+
+/* ===== TaskDetail Component Styles ===== */
+
+.task-detail-wrapper {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  color: var(--text);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.task-detail-wrapper h2, 
+.task-detail-wrapper h3 {
+  text-align: center;
+  color: var(--text);
+}
+
+.task-edit-table,
+.task-preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.task-edit-table td,
+.task-preview-table th,
+.task-preview-table td {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--card-border);
+  color: var(--text);
+}
+
+.task-preview-table th {
+  background-color: #f8f9fa;
+  text-align: left;
+  width: 30%;
+}
+
+body.dark .task-preview-table th {
+  background-color: #333;
+  color: var(--text);
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+textarea.notes-input {
+  min-height: 70px;
+  margin-top: 5px;
+}
+
+.update-btn {
+  margin-top: 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.update-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Red Border Highlight for Headings in Dark Mode */
+body.dark .task-detail-wrapper h2,
+body.dark .task-detail-wrapper h3 {
+  border-bottom: 2px solid red;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Red borders around tables */
+body.dark .task-edit-table td,
+body.dark .task-preview-table th,
+body.dark .task-preview-table td {
+  border: 1px solid red;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  background-color: var(--card-bg);
+  border-right: 1px solid var(--card-border);
+  padding: 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  z-index: 1000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--text);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.3rem;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar li:hover {
+  background-color: var(--primary-hover);
+  color: #fff;
+}
+
+body.dark .sidebar {
+  background-color: #1e1e1e;
+  border-color: red;
+}
+
+body.dark .sidebar li {
+  border: 1px solid red;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.toggle-sidebar-btn,
+.toggle-theme-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toggle-sidebar-btn:hover,
+.toggle-theme-btn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .app-container {
+    padding-left: 1rem !important;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+}
